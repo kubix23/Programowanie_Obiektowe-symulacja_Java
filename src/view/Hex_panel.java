@@ -5,11 +5,12 @@ import world.World;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.geom.AffineTransform;
-import java.awt.geom.Area;
 import java.awt.geom.GeneralPath;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,7 +113,7 @@ public class Hex_panel extends JPanel{
             double sy = size/path.getBounds2D().getHeight();
             path.transform(AffineTransform.getScaleInstance(sx,sy));
             path.transform(AffineTransform.getTranslateInstance(-path.getBounds2D().getX(),-path.getBounds2D().getY()));
-            return;
+            return path;
         }
 
         protected void updateHoneyComb() {

@@ -1,14 +1,10 @@
 package view.lisener;
 
 import organisms.Human;
-import sun.awt.SunHints;
 import world.World;
 
 import java.awt.*;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.security.Key;
 
 public class PlayerMove implements KeyEventDispatcher {
         private Human human;
@@ -25,21 +21,33 @@ public class PlayerMove implements KeyEventDispatcher {
                                switch(e.getKeyCode()){
                                        case KeyEvent.VK_Q:
                                                human.moveSpeed(-1,-1);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_W:
                                                human.moveSpeed(1,-1);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_A:
                                                human.moveSpeed(-1,0);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_S:
                                                human.moveSpeed(1,0);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_Z:
                                                human.moveSpeed(-1,1);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_X:
                                                human.moveSpeed(1,1);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_P:
                                                human.skill();
@@ -55,18 +63,27 @@ public class PlayerMove implements KeyEventDispatcher {
                                switch(e.getKeyCode()){
                                        case KeyEvent.VK_UP:
                                                human.moveSpeed(0,-1);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_LEFT:
                                                human.moveSpeed(-1,0);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_RIGHT:
                                                human.moveSpeed(1,0);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_DOWN:
                                                human.moveSpeed(0,1);
+                                               world.takeTurn();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_P:
                                                human.skill();
+                                               world.updateWorld();
                                                break;
                                        case KeyEvent.VK_ENTER:
                                                world.takeTurn();
